@@ -12,8 +12,12 @@
     <Shell.FlyoutHeader>
         <flyout:FlyoutHeaderView/>
     </Shell.FlyoutHeader>
-    <TabBar>
-        
+
+    <Shell.FlyoutFooter>
+        <flyout:FlyoutFooterView/>
+    </Shell.FlyoutFooter>
+    
+    <TabBar>        
         <Tab Title="Materiales"
             Icon="{FontImage Color={StaticResource Primary }, FontFamily=Iconos, Glyph=&#xe03e;}">
             <ShellContent ContentTemplate="{DataTemplate pages:MaterialEstudioPage}" />
