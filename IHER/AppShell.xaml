@@ -6,9 +6,14 @@
     xmlns:local="clr-namespace:IHER"
     xmlns:pages="clr-namespace:IHER.Pages"
     xmlns:header="clr-namespace:IHER.Components.HeaderAPP"
+    xmlns:flyout="clr-namespace:IHER.Components.FlyoutAPP"
     Shell.FlyoutBehavior="Flyout">
-
+    
+    <Shell.FlyoutHeader>
+        <flyout:FlyoutHeaderView/>
+    </Shell.FlyoutHeader>
     <TabBar>
+        
         <Tab Title="Materiales"
             Icon="{FontImage Color={StaticResource Primary }, FontFamily=Iconos, Glyph=&#xe03e;}">
             <ShellContent ContentTemplate="{DataTemplate pages:MaterialEstudioPage}" />
