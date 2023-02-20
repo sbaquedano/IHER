@@ -49,6 +49,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\logo.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Compile Update="Pages\MaterialEstudioPage.xaml.cs">
 	    <DependentUpon>MaterialEstudioPage.xaml</DependentUpon>
 	  </Compile>

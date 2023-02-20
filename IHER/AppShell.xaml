@@ -5,11 +5,25 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:IHER"
     xmlns:pages="clr-namespace:IHER.Pages"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:header="clr-namespace:IHER.Components.HeaderAPP"
+    Shell.FlyoutBehavior="Flyout">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate pages:MaterialEstudioPage}"
-        Route="MainPage" />
+    <TabBar>
+        <Tab Title="Materiales"
+            Icon="{FontImage Color={StaticResource Primary }, FontFamily=Iconos, Glyph=&#xe03e;}">
+            <ShellContent ContentTemplate="{DataTemplate pages:MaterialEstudioPage}" />
+            <Shell.TitleView>
+                <header:HeaderAPPView/>
+            </Shell.TitleView>
+        </Tab>
+        <Tab Title="Pruebas"
+            Icon="{FontImage Color={StaticResource Primary }, FontFamily=Iconos, Glyph=&#xe865;}">
+            <ShellContent ContentTemplate="{DataTemplate pages:MaterialEstudioPage}" />
+            <Shell.TitleView>
+                <header:HeaderAPPView/>
+            </Shell.TitleView>
+        </Tab>
+    </TabBar>
+
 
 </Shell>
