@@ -13,6 +13,7 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 				fonts.AddFont("MaterialIcons-Regular.ttf", "Iconos");
 				fonts.AddFont("ionicons.ttf", "ionicons");
+				fonts.AddFont("materialdesignicons-webfont.ttf", "WebFonts");
 			});
 
 		return builder.Build();
