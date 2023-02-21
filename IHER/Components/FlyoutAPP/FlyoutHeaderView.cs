@@ -9,10 +9,10 @@ public class FlyoutHeaderView : ContentView
             Children =
             {
                 new Image
-                {
-                    Source="bg.png",
-                    HorizontalOptions = LayoutOptions.Center
-                }
+                    {
+                        Source="bg.png",
+                        HorizontalOptions = LayoutOptions.Center
+                    }                                
             }
         };
     }
