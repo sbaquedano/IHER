@@ -9,11 +9,14 @@ namespace IHER.Helper
 {
     public class HelperInterface : IHelperInterface
     {
+        [Obsolete]
         public Label BodyText(string body, string textColor = "", bool bold = false, bool verticalCenter = false, bool horizontalCenter = false)
         {
             var label = new Label
             {
+                Padding = new Thickness(10),
                 Text = body,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
                 TextColor = (Color)App.Current.Resources.MergedDictionaries.First()["Gray600"],
             };
 
@@ -28,10 +31,12 @@ namespace IHER.Helper
             return label;
         }
 
-        public Label SubTitle(string subTitle, string textColor = "", bool bold = false, bool verticalCenter = false, bool horizontalCenter = false)
+        [Obsolete]
+        public Label SubTitle(string subTitle, string textColor = "", bool bold = true, bool verticalCenter = false, bool horizontalCenter = false)
         {
             var label = new Label
             {
+                Padding = new Thickness(10, 10, 10, 0),
                 Text = subTitle,
                 TextColor = (Color)App.Current.Resources.MergedDictionaries.First()["Gray600"],
             };
@@ -47,14 +52,17 @@ namespace IHER.Helper
             return label;
         }
 
+        [Obsolete]
         public Label Title(string title, string textColor = "", bool bold = true, bool verticalCenter = true, bool horizontalCenter = true)
         {
             var label = new Label
             {
+                Padding = new Thickness(10),
                 Text = title,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
-                FontSize = 17,
-                TextColor = (Color)App.Current.Resources.MergedDictionaries.First()["Gray600"],
+                HorizontalTextAlignment = TextAlignment.Center,
+                FontSize = 20,
+                TextColor = (Color)App.Current.Resources.MergedDictionaries.First()["Black"],
             };
 
             if (!string.IsNullOrWhiteSpace(textColor)) label.TextColor = Color.FromHex(textColor);

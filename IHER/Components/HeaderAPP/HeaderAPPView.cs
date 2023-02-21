@@ -2,7 +2,8 @@ namespace IHER.Components.HeaderAPP;
 
 public class HeaderAPPView : ContentView
 {
-	public HeaderAPPView()
+    [Obsolete]
+    public HeaderAPPView()
 	{
         Content = new StackLayout
         {

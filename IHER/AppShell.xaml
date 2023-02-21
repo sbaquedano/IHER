@@ -5,19 +5,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:IHER"
     xmlns:pages="clr-namespace:IHER.Pages"
+    xmlns:modulos="clr-namespace:IHER.Modulos"
     xmlns:header="clr-namespace:IHER.Components.HeaderAPP"
     xmlns:flyout="clr-namespace:IHER.Components.FlyoutAPP"
     Shell.FlyoutBehavior="Flyout">
-    
-    <Shell.FlyoutHeader>
-        <flyout:FlyoutHeaderView/>
-    </Shell.FlyoutHeader>
 
-    <Shell.FlyoutFooter>
-        <flyout:FlyoutFooterView/>
-    </Shell.FlyoutFooter>
-    
-    <TabBar>        
+    <FlyoutItem Icon="{FontImage Color={StaticResource Primary }, FontFamily=Iconos, Glyph=&#xe88a;}" Title="Inicio">
         <Tab Title="Materiales"
             Icon="{FontImage Color={StaticResource Primary }, FontFamily=Iconos, Glyph=&#xe03e;}">
             <ShellContent ContentTemplate="{DataTemplate pages:MaterialEstudioPage}" />
@@ -32,5 +25,54 @@
                 <header:HeaderAPPView/>
             </Shell.TitleView>
         </Tab>
-    </TabBar>
+        <Shell.TitleView>
+            <header:HeaderAPPView/>
+        </Shell.TitleView>        
+    </FlyoutItem>
+    
+    <FlyoutItem Icon="{FontImage Color={StaticResource Primary }, FontFamily=Iconos, Glyph=&#xe88e;}" Title="Sobre Nosotros">
+        <Tab Title="Destinatarios"
+            Icon="{FontImage Color={StaticResource Primary }, FontFamily=WebFonts, Glyph=&#xF0849;}">
+            <ShellContent ContentTemplate="{DataTemplate pages:DestinatariosPage}" />
+            <Shell.TitleView>
+                <header:HeaderAPPView/>
+            </Shell.TitleView>
+        </Tab>
+        <Tab Title="Nosotros"
+            Icon="{FontImage Color={StaticResource Primary }, FontFamily=Iconos, Glyph=&#xe84f;}">
+            <ShellContent ContentTemplate="{DataTemplate pages:NosotrosPage}" />
+            <Shell.TitleView>
+                <header:HeaderAPPView/>
+            </Shell.TitleView>
+        </Tab>
+        <Tab Title="Valores"
+            Icon="{FontImage Color={StaticResource Primary }, FontFamily=WebFonts, Glyph=&#xF10F1;}">
+            <ShellContent ContentTemplate="{DataTemplate pages:ValoresPage}" />
+            <Shell.TitleView>
+                <header:HeaderAPPView/>
+            </Shell.TitleView>
+        </Tab>
+        <Tab Title="Logros"
+            Icon="{FontImage Color={StaticResource Primary }, FontFamily=WebFonts, Glyph=&#xF0538;}">
+            <ShellContent ContentTemplate="{DataTemplate pages:LogrosPage}" />
+            <Shell.TitleView>
+                <header:HeaderAPPView/>
+            </Shell.TitleView>
+        </Tab>
+        <Shell.TitleView>
+            <header:HeaderAPPView/>
+        </Shell.TitleView>
+    </FlyoutItem>
+    <!--<Tab Title="Buscar Sedes"
+             Icon="{FontImage Color={StaticResource Primary }, FontFamily=Iconos, Glyph=&#xe0c8;}">
+            <ShellContent ContentTemplate="{DataTemplate modulos:SobreNosotrosView}" />
+        </Tab>
+    </FlyoutItem>-->
+
+    <Shell.FlyoutHeader>
+        <flyout:FlyoutHeaderView/>
+    </Shell.FlyoutHeader>
+    <Shell.FlyoutFooter>
+        <flyout:FlyoutFooterView/>
+    </Shell.FlyoutFooter>
 </Shell>

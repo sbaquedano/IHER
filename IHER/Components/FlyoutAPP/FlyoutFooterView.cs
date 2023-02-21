@@ -14,6 +14,8 @@ public class FlyoutFooterView : ContentView
     private ImageButton GmailButton;
     private ImageButton TwitterButton;
     private ImageButton YoutubeButton;
+
+    [Obsolete]
     public FlyoutFooterView()
 	{
         Content = new StackLayout
@@ -47,6 +49,8 @@ public class FlyoutFooterView : ContentView
             },
         };
     }
+
+    [Obsolete]
     private ImageButton WhatsApp()
     {
         WhatsAppButton = new ImageButton
@@ -64,6 +68,8 @@ public class FlyoutFooterView : ContentView
         WhatsAppButton.Clicked += LlamarWhatsApp;
         return WhatsAppButton;
     }
+
+    [Obsolete]
     private ImageButton Facebook()
     {
         FacebookButton = new ImageButton
@@ -81,6 +87,8 @@ public class FlyoutFooterView : ContentView
         FacebookButton.Clicked += LlamarFacebook;
         return FacebookButton;
     }
+
+    [Obsolete]
     private ImageButton Instagram()
     {
         InstagramButton = new ImageButton
@@ -98,6 +106,8 @@ public class FlyoutFooterView : ContentView
         InstagramButton.Clicked += LlamarInstagram;
         return InstagramButton;
     }
+
+    [Obsolete]
     private ImageButton Gmail()
     {
         GmailButton = new ImageButton
@@ -115,6 +125,8 @@ public class FlyoutFooterView : ContentView
         GmailButton.Clicked += LlamarGmail;
         return GmailButton;
     }
+
+    [Obsolete]
     private ImageButton Twitter()
     {
         TwitterButton = new ImageButton
@@ -132,6 +144,8 @@ public class FlyoutFooterView : ContentView
         TwitterButton.Clicked += LlamarTwitter;
         return TwitterButton;
     }
+
+    [Obsolete]
     private ImageButton Youtube()
     {
         YoutubeButton = new ImageButton
