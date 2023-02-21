@@ -1,4 +1,8 @@
-﻿namespace IHER;
+﻿using IHER.Helper;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace IHER;
 
 public static class MauiProgram
 {
@@ -15,7 +19,7 @@ public static class MauiProgram
 				fonts.AddFont("ionicons.ttf", "ionicons");
 				fonts.AddFont("materialdesignicons-webfont.ttf", "WebFonts");
 			});
-		
+		builder.UseMauiApp<App>().Services.AddTransient<IHelperInterface, HelperInterface>();
 		return builder.Build();
 	}
 }
