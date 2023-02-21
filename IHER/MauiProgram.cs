@@ -15,7 +15,7 @@ public static class MauiProgram
 				fonts.AddFont("ionicons.ttf", "ionicons");
 				fonts.AddFont("materialdesignicons-webfont.ttf", "WebFonts");
 			});
-
+		
 		return builder.Build();
 	}
 }

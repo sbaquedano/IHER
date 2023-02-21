@@ -1,4 +1,5 @@
 using System.Reflection;
+using WhtasAppOpen.Net.Maui;
 
 namespace IHER.Components.FlyoutAPP;
 
@@ -6,6 +7,7 @@ public class FlyoutFooterView : ContentView
 {
     private string _derechos = $"{DateTime.Now.Year} © {Assembly.GetExecutingAssembly().GetName().Name}";
     private string _versionAPP = $"Versión {Assembly.GetExecutingAssembly().GetName().Version}";
+    private bool EnAccion;
     private ImageButton WhatsAppButton;
     private ImageButton FacebookButton;
     private ImageButton InstagramButton;
@@ -59,6 +61,7 @@ public class FlyoutFooterView : ContentView
             HorizontalOptions=LayoutOptions.CenterAndExpand,
             Padding=new Thickness(0,6,0,6),
         };
+        WhatsAppButton.Clicked += LlamarWhatsApp;
         return WhatsAppButton;
     }
     private ImageButton Facebook()
@@ -75,6 +78,7 @@ public class FlyoutFooterView : ContentView
             HorizontalOptions = LayoutOptions.CenterAndExpand,
             Padding = new Thickness(0, 6, 0, 6),
         };
+        FacebookButton.Clicked += LlamarFacebook;
         return FacebookButton;
     }
     private ImageButton Instagram()
@@ -91,6 +95,7 @@ public class FlyoutFooterView : ContentView
             HorizontalOptions = LayoutOptions.CenterAndExpand,
             Padding = new Thickness(0, 6, 0, 6),
         };
+        InstagramButton.Clicked += LlamarInstagram;
         return InstagramButton;
     }
     private ImageButton Gmail()
@@ -107,6 +112,7 @@ public class FlyoutFooterView : ContentView
             HorizontalOptions = LayoutOptions.CenterAndExpand,
             Padding = new Thickness(0, 6, 0, 6),
         };
+        GmailButton.Clicked += LlamarGmail;
         return GmailButton;
     }
     private ImageButton Twitter()
@@ -123,6 +129,7 @@ public class FlyoutFooterView : ContentView
             HorizontalOptions = LayoutOptions.CenterAndExpand,
             Padding = new Thickness(0, 6, 0, 6),
         };
+        TwitterButton.Clicked += LlamarTwitter;
         return TwitterButton;
     }
     private ImageButton Youtube()
@@ -139,6 +146,92 @@ public class FlyoutFooterView : ContentView
             HorizontalOptions = LayoutOptions.CenterAndExpand,
             Padding = new Thickness(0, 6, 0, 6),
         };
+        YoutubeButton.Clicked += LlamarYouTube;
         return YoutubeButton;
+    }
+    void LlamarWhatsApp(object sender, EventArgs e)
+    {
+        if (EnAccion)
+            return;
+        EnAccion = true;
+
+        string _saludo;
+        var hora = DateTime.Now.Hour;
+        if (hora > 17) { _saludo = "Buenas noches"; } else if (hora > 11) { _saludo = "Buenas tardes"; } else { _saludo = "Buen día"; }
+
+        WhtasAppOpen.Net.Maui.WhatsApp.OpenWithMessage("+50496253694", $"{_saludo}, soy un usuario de la aplicación de IHER, quiero consultar algo.");
+      
+
+        EnAccion = false;
+    }
+    async void LlamarFacebook(object sender, EventArgs e)
+    {
+        if (EnAccion)
+            return;
+
+        EnAccion = true;
+
+        //var result = await DependencyService.Get<IAppHandler>().LaunchApp("com.companyname.app3");
+        await Launcher.OpenAsync(new Uri("https://www.facebook.com/Iher.hn"));
+
+        EnAccion = false;
+    }
+
+    async void LlamarInstagram(object sender, EventArgs e)
+    {
+        if (EnAccion)
+            return;
+
+        EnAccion = true;
+
+        await Launcher.OpenAsync(new Uri("https://instagram.com/iher_central?igshid=YmMyMTA2M2Y="));
+
+        EnAccion = false;
+    }
+
+    async void LlamarYouTube(object sender, EventArgs e)
+    {
+        if (EnAccion)
+            return;
+
+        EnAccion = true;
+
+        await Launcher.OpenAsync(new Uri("https://youtube.com/@ihercentral5739"));
+
+        EnAccion = false;
+    }
+    async void LlamarTwitter(object sender, EventArgs e)
+    {
+        if (EnAccion)
+            return;
+
+        EnAccion = true;
+
+        await Launcher.OpenAsync(new Uri("https://twitter.com/IHER_Central?t=3c748iYUmE0fGA4OQ5ntdw&s=09"));
+
+        EnAccion = false;
+    }
+    async void LlamarGmail(object sender, EventArgs e)
+    {
+        if (EnAccion)
+            return;
+
+        EnAccion = true;
+        string _saludo;
+        var hora = DateTime.Now.Hour;
+        if (hora > 17) { _saludo = "Buenas noches"; } else if (hora > 11) { _saludo = "Buenas tardes"; } else { _saludo = "Buen día"; }
+
+        if (Email.Default.IsComposeSupported)
+        {
+            var message = new EmailMessage
+            {
+                Subject = "Consulta usuario IHER APP",
+                Body = $"{_saludo}, soy un usuario de la aplicación de IHER, quiero consultar algo.",
+                BodyFormat = EmailBodyFormat.PlainText,
+                To = new List<string> { "iher90@hotmail.com" }
+            };
+            await Email.Default.ComposeAsync(message);
+        }
+        EnAccion = false;
     }
 }
