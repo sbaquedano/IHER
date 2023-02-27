@@ -36,7 +36,7 @@ public class FlyoutFooterView : ContentView
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
                 VerticalOptions = LayoutOptions.CenterAndExpand,
                 Margin = new Thickness(0,10,0,0),
-                BackgroundColor = (Color)App.Current.Resources.MergedDictionaries.First()["Tertiary"],
+                BackgroundColor = (Color)App.Current.Resources.MergedDictionaries.First()["Primary"],
                 Children =
                 {
                     WhatsApp(),
